@@ -38,7 +38,7 @@ def morphologicalTransform(img, i):
     filename = "adidas_morph_" + str(i) + ".png"
     cv2.imwrite(filename, gradient)
 
-def random
+def randomOps()
 
 if __name__ == "__main__":
     # load the games image
