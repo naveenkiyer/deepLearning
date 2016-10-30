@@ -42,9 +42,12 @@ if __name__ == "__main__":
     # load the games image
     print("Starting program")
     img = cv2.imread("adidas1.png", cv2.IMREAD_UNCHANGED)
+    b_c, g_c, r_c = cv2.split(img)
+    a_c = b_c
+    new_img = cv2.merge((b_c, g_c, r_c, a_c))
     for i in range(0, 30):
         print("For loop 1 iteration " + str(i))
-        createAffineTransformation(img, i)
+        createAffineTransformation(new_img, i)
     medianBlurring(img, 5)
     laplacianGradient(img, 0)
 #    for i in range(2, 20):
