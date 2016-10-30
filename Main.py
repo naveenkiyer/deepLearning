@@ -40,12 +40,15 @@ def morphologicalTransform(img, i):
 
 if __name__ == "__main__":
     # load the games image
-    img = cv2.imread("adidas1.png")
+    print("Starting program")
+    img = cv2.imread("adidas1.png", cv2.IMREAD_UNCHANGED)
     for i in range(0, 30):
+        print("For loop 1 iteration " + str(i))
         createAffineTransformation(img, i)
     medianBlurring(img, 5)
     laplacianGradient(img, 0)
-    for i in range(2, 20):
-        if i % 2 == 1:
-            morphologicalTransform(img, i)
-            cv2.waitKey(0)
+#    for i in range(2, 20):
+#        print("For loop 2 iteration " + str(i))
+#        if i % 2 == 1:
+#            morphologicalTransform(img, str(i))
+#            cv2.waitKey(0)
