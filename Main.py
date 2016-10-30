@@ -15,7 +15,7 @@ def createAffineTransformation(img, i):
     rows, cols, ch = img.shape
     
     M = cv2.getAffineTransform(pts1, pts2)
-    dst = cv2.warpAffine(img, M, (cols, rows), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_CONSTANT, borderValue=[255, 255, 255, 255])
+    dst = cv2.warpAffine(img, M, (cols, rows), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_TRANSPARENT)
     
     filename = "adidas_affine_" + str(i) + ".png"
     cv2.imwrite(filename, dst)
