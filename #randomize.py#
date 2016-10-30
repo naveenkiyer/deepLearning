@@ -15,7 +15,7 @@ def createAffineTransformation(img, i):
     rows, cols, ch = img.shape
     
     M = cv2.getAffineTransform(pts1, pts2)
-    dst = cv2.warpAffine(img, M, (cols, rows), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_CONSTANT, borderValue=[0, 0, 0, 0])
+    dst = cv2.warpAffine(img, M, (cols, rows), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_CONSTANT, borderValue="#00000000")
     
     filename = "adidas_affine_" + str(i) + ".png"
     cv2.imwrite(filename, dst)
@@ -37,6 +37,8 @@ def morphologicalTransform(img, i):
     gradient = cv2.morphologyEx(img, cv2.MORPH_GRADIENT, kernel)
     filename = "adidas_morph_" + str(i) + ".png"
     cv2.imwrite(filename, gradient)
+
+def random
 
 if __name__ == "__main__":
     # load the games image

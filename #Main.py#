@@ -15,7 +15,7 @@ def createAffineTransformation(img, i):
     rows, cols, ch = img.shape
     
     M = cv2.getAffineTransform(pts1, pts2)
-    dst = cv2.warpAffine(img, M, (cols, rows), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_CONSTANT, borderValue=[0, 0, 0, 0])
+    dst = cv2.warpAffine(img, M, (cols, rows), flags=cv2.INNER_CUBIC, borderMode=BORDER_TRANSPARENT)
     
     filename = "adidas_affine_" + str(i) + ".png"
     cv2.imwrite(filename, dst)
@@ -52,3 +52,4 @@ if __name__ == "__main__":
 #        if i % 2 == 1:
 #            morphologicalTransform(img, str(i))
 #            cv2.waitKey(0)
+
